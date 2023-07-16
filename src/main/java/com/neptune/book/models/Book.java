@@ -1,14 +1,21 @@
 package com.neptune.book.models;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 
 import java.util.UUID;
 
+@Entity
 public class Book {
-    private final String id;
+    @Id
+    private String id;
     private String title;
     private String author;
     private String genre;
+
+    public Book() {
+    }
 
     public Book(String id) {
         this.id = id;
